@@ -1,0 +1,27 @@
+<div class="frame">
+  <div class="logo">
+    <img src="assets/logo.png" alt="">
+  </div>
+
+  <div class="title">
+    {{title}}
+  </div>
+  <div class="tags">
+    <div
+      *ngFor="let tag of tags" class="tag"><i class="fa-solid fa-tag"></i>{{tag}}</div>
+  </div>
+
+  <iframe class="demo" *ngIf="safeUrl" [src]="safeUrl" frameborder="0"></iframe>
+  <div *ngIf="!safeUrl" class="demo">
+    <ng-content></ng-content>
+  </div>
+
+  <div *ngIf="codeImg" class="code">
+    <img  [src]="codeImg" alt="">
+  </div>
+
+  <div class="links">
+    The code is available on my github <i class="fa-brands fa-github"></i>/LoicFeuga/videoCreator/app/shared/posts/
+  </div>
+
+</div>
